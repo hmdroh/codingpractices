@@ -29,7 +29,11 @@ function simpleArraySum(ar) {
     /*
      * Write your code here.
      */
-
+    var result = 0;
+    for (var i = 0; i < ar.length; i++){
+        result = result + ar[i];
+    }
+    return result;
 }
 
 function main() {
