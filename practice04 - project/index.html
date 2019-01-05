@@ -21,7 +21,12 @@ limitations under the License.
 		<title></title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<style>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+        <style>
 			html {
 				height: 100%;
 			}
@@ -32,9 +37,11 @@ limitations under the License.
 			}
 			#search {
 				position: absolute;
+                padding: 2px;
 				width: 100%;
 				height: 34px;
 				text-align: center;
+                background-color: yellow;
 			}
 				#search * {
 					font-size: 18px;
@@ -42,7 +49,7 @@ limitations under the License.
 				}
 			#results {
 				position: absolute;
-				top: 40px;
+				top: 50px;
 				left: 8px;
 				width: 330px;
 				bottom: 0px;
@@ -57,7 +64,7 @@ limitations under the License.
 				}
 			#viewer {
 				position: absolute;
-				top: 40px;
+				top: 50px;
 				left: 340px;
 				right: 8px;
 				bottom: 72px;
@@ -81,16 +88,17 @@ limitations under the License.
 	</head>
 	<body>
 
-		<form id="search">
-			<input id="query" value="poly"></input>
-			<button id="button">search</button>
+
+        <form id="search">
+			<input id="query" value="computer"></input>
+			<button id="button">search 3d</button>
 		</form>
 		<span id="results"></span>
 		<span id="viewer"></span>
 		<div id="info">
 			<span id="asset_name">Title</span><br/>
 			by <span id="asset_author">Author</span>
-		</div>
+        </div>
 
 		<script src="third_party/three.js/js/three.min.js"></script>
 		<script src="third_party/three.js/js/OBJLoader.js"></script>
