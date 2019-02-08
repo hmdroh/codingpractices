@@ -1,5 +1,7 @@
 // lists are used for adding items
 
+
+
 function List(){
     this.listSize = 0;
     this.pos = 0;
@@ -13,7 +15,10 @@ function List(){
     this.front = front;
     this.end = end;
     this.revious = previous;
-    this.hadPrevious = hasPrevious;
+    this.hasPrevious = hasPrevious;
+
+    this.next = next;
+    this.previous = previous;
     this.hasNext = hasNext;
     this.length = length;
     this.currPos = currPos;
@@ -21,6 +26,8 @@ function List(){
     this.getElement = getElement;
     this.contains = contains;
 
+    this.iteratePrintAll = iteratePrintAll;
+    this.iteratePrintAllReverse = iteratePrintAllReverse;
 }
 
 function append(element){
@@ -143,4 +150,97 @@ names.append("Shoaib");
 //now lets move to first element;
 
 names.front();
-console.log(names.getElement());
+console.log(names.getElement()); // hamed
+
+console.log(names.next()); // hamed
+ 
+console.log(names.next()); // abdullah
+
+names.next();
+
+names.previous();
+
+console.log(names.previous()); // abdullah
+
+
+// iterating through a list
+
+
+function iteratePrintAll(){
+    for (this.front(); this.hasNext();){
+        console.log(this.next());
+    }
+}
+
+names.iteratePrintAll();
+
+function iteratePrintAllReverse(){
+    for(this.end(); this.hasPrevious();){
+        console.log(this.previous());
+    }
+}
+
+console.log("---");
+
+
+names.iteratePrintAllReverse();
+
+var movies = '1. matrix revolution \n 2. troy \n 3. titanic \n 4. 300 \n 5. limitless  \n 6. 2012';
+
+m = movies.split("\n");
+
+console.log(m);
+
+
+//lets trim the text
+
+for (var i = 0; i< m.length; i++){
+    m[i] = m[i].trim();
+}
+
+
+//
+
+var movieList = new List();
+for(var i =0; i< m.length; ++i){
+    movieList.append(m[i]);
+}
+
+movieList.iteratePrintAll();
+
+function displayList(list){
+    for(list.front(); list.hasNext();){
+        var listItem = list.next();
+        if(listItem instanceof Customer){
+            console.log(listItem.name + ", " + listItem.movie);
+        }
+        else{
+            console.log(listItem);
+        }
+    }
+}
+
+var customers = new List();
+
+function Customer(name, movie){
+    this.name = name;
+    this.movie = movie;
+
+}
+
+function checkOut(name, movie, movieList, customerList){
+    if(movieList.contains(movie)){
+        var c = new Customer(name, movie);
+        customerList.append(c);
+        movieList.remove(movie);
+    }
+    else {
+        console.log(movie + " is not available.");
+    }
+}
+
+
+checkOut("TESTCUSTOMER", "1. matrix revolution", movieList, customers);
+checkOut("TESTCUSTOMER", "passanger", movieList, customers); // not available
+
+displayList(customers);
