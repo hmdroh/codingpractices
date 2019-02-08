@@ -127,3 +127,20 @@ function end(){
 function currPos(){
     return pos;
 }
+
+
+var names = new List();
+
+names.append("Hamed");
+names.append("Abdullah");
+names.append("Qais");
+names.append("Tamim");
+names.append("Tawab");
+names.append("Bilal");
+names.append("Shoaib");
+
+
+//now lets move to first element;
+
+names.front();
+console.log(names.getElement());
