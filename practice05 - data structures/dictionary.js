@@ -9,6 +9,7 @@ function Dictionary(){
     this.showAll = showAll;
     this.count = count;
     this.clear = clear;
+    this.showAllSorted = showAllSorted;
 }
 
 function add(key,value){
@@ -64,5 +65,26 @@ pbook.clear();
 console.log("Number of entries: " + pbook.count());
 
 
+//example 2 sorting
 /// adding and sorting to dictionary class:
+console.log("---------example 2");
 
+pbook.add("UK", "0044");
+pbook.add("Mexico", "0052");
+pbook.add("India", "0091");
+pbook.add("China", "0086");
+pbook.add("Belgium", "0032");
+
+function showAllSorted(){
+    var keys = Object.keys(this.dataStore);
+    keys.sort();
+    for(var i =0; i <keys.length; i++){
+        console.log(keys[i] + " -> " + this.dataStore[keys[i]]);
+    }
+}
+console.log("---Unsorted-----:")
+pbook.showAll();
+
+console.log("---Sorted:---");
+
+pbook.showAllSorted();

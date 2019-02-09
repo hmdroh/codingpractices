@@ -112,3 +112,40 @@ function fact(n){
 
 // 5! = 1*2*3*4*5 = 120
 console.log(fact(5)); // should display 120
+
+
+//
+console.log("----- example: class---")
+class Stack2 {
+    constructor(){
+        this.items = [];
+    }
+    push(element){
+        this.items.push(element);
+    }
+
+    pop(element){
+        this.items.pop();
+    }
+
+    peek(){
+        return this.items[this.items.length-1];
+    }
+
+    isEmpty(){
+        return this.items.length;
+    }
+
+    clear(){
+        this.items = [];
+    }
+}
+
+
+var newStack = new Stack2();
+
+newStack.push(1);
+newStack.push(3);
+newStack.push(10);
+
+console.log(newStack.peek());
