@@ -29,3 +29,15 @@ function showAll(){
     }
 }
 
+/// example 1:
+
+var pbook = new Dictionary();
+
+pbook.add("Afghanistan", "0093");
+pbook.add("USA", "001");
+pbook.add("UAE", "00971");
+pbook.add("Germany", "0049");
+
+console.log("Afghanistan's code is: " + pbook.find("Afghanistan"));
+pbook.remove("UAE");
+pbook.showAll();
