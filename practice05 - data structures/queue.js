@@ -48,3 +48,22 @@ function empty(){
 
 
 /// these are functions example: 
+
+var q = new Queue();
+q.enqueue("Hamed");
+q.enqueue("Abdullah");
+q.enqueue("Tawab");
+q.enqueue("Qais");
+
+console.log(q.toString());
+
+q.dequeue();
+console.log(q.toString());
+
+console.log("Front of queue: " + q.front());
+
+console.log("Back of queue: " + q.back());
+
+
+
+//now lets add senario partners at dance:
