@@ -12,7 +12,7 @@ function CArray(numElements){
         this.dataStore[i] = i;
     }
 
-    this.insertionSort = insertionSort;
+    this.selectionSort = selectionSort;
 }
 
 
@@ -53,35 +53,28 @@ function swap(arr, index1, index2){
 
 }
 
-var numElements = 1000;
+var numElements = 20;
 var myNum = new CArray(numElements);
 myNum.setData();
 console.log(myNum.toString());
-console.log("--- insertion sort");
+console.log("--- selection sort");
 
-function insertionSort(){
-    var start = new Date();
+function selectionSort(){
+    var min, temp;
 
-    var temp, inner;
-
-    for(var outer = 1; outer <= this.dataStore.length-1; ++outer){
-
-        temp = this.dataStore[outer];
-        inner = outer;
-
-        while(inner > 0 && (this.dataStore[inner-1] >=temp)){
-            this.dataStore[inner] = this.dataStore[inner-1];
-            --inner;
+    for(var outer = 0; outer <= this.dataStore.length-2; outer++){
+        min = outer;
+        for(var inner = outer +1; inner <= this.dataStore.length-1; inner++){
+            if(this.dataStore[inner] < this.dataStore[min]){
+                min = inner;
+            }
         }
-        this.dataStore[inner] = temp;
+        swap(this.dataStore, outer, min);
     }
     console.log(this.toString());
-    var end = new Date();
-    console.log("Miliseconds to process: " + (end-start));
-
 }
 
-myNum.insertionSort();
+myNum.selectionSort();
 
 
 

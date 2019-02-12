@@ -6,6 +6,8 @@ function swap(array, index1, index2,){
 }
 
 function insertionSort(array){
+    var start = new Date();
+    // console.log(start.toString());
     var temp, inner;
 
     for(var outer =1; outer <= array.length-1; outer++){
@@ -18,7 +20,8 @@ function insertionSort(array){
         }
         array[inner] = temp;
     }
-
+    var end = new Date();
+    console.log(end-start);
 }
 
 insertionSort(numbers);
